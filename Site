@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Joshbert Zands, PhD</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header, nav, main, footer {
+      max-width: 800px;
+      margin: auto;
+      padding: 1em;
+    }
+    header h1 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #444;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      margin-bottom: 3em;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+    .quote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #aaa;
+      padding-left: 1em;
+      margin: 2em 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      border-top: 1px solid #ddd;
+      padding-top: 1em;
+      margin-top: 2em;
+    }
+    a.kofi {
+      display: inline-block;
+      margin-top: 1em;
+      background: #29abe0;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dr. Joshbert Zands, PhD</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#paper">Download</a>
+      <a href="#faq">FAQ</a>
+      <a href="#media">Press</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>Dr. Joshbert Zands is the founding professor of Crypto-zoonotic-micro-mycology at UC Borehamwood. He discovered <em>Porphyromyces indignatus</em>, the ideological fungus now feared and misunderstood across academic and political circles alike.</p>
+    </section>
+    <section id="projects">
+      <h2>Current Projects</h2>
+      <ul>
+        <li>Lead Investigator: <em>Porphyromyces indignatus</em> and ideological imprinting</li>
+        <li>Director: Zands Lab for Behavioral Endocrinology & Mycotic Psychotropics</li>
+        <li>Co-creator: Biochemical Emotional Response Profiling (BERP)</li>
+      </ul>
+    </section>
+    <section id="paper">
+      <h2>Download the Study</h2>
+      <p><a href="Porphyromyces_Indignatus_Zine_Final_With_Addendum.pdf" download>📄 Click here to download the full paper (PDF)</a></p>
+    </section>
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>What is a Myconid?</strong><br>A myconid is a humanoid fungal entity from speculative xenomycology. They walk, think, and occasionally teach undergraduate philosophy.</p>
+      <p><strong>What is Mycology?</strong><br>The study of fungi — their biology, reproduction, and troubling influence on political behavior.</p>
+      <p><strong>UC Borehamwood? That place melting ice caps with flamethrowers?</strong><br>No official documentation supports this. The university’s Climatological Flamethrower Initiative concluded in 2012.</p>
+    </section>
+    <section id="media">
+      <h2>Press & Media</h2>
+      <p><strong>Spore Signals:</strong> "Tell us about your childhood."<br><strong>Zands:</strong> Unlike my father, whose greatest scientific contribution was avoiding taxes, I studied fungi to escape his conservatory-based worldview.</p>
+      <p><strong>MycoMinds:</strong> "You're called the 'spore whisperer'. Thoughts?"<br><strong>Zands:</strong> Better than being called 'landlord', which is what my father insists on from his cleaner.</p>
+      <p><strong>BBC4 Late Ideas:</strong> "Is your father infected by the fungus?"<br><strong>Zands:</strong> Not infected — he's symbiotic. The fungus admires his dedication to hierarchy.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: jzands@ucborehamwood.edu</p>
+      <form action="#" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4"></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <div class="quote">
+      “In the fungal hyphae of ideology, truth and delusion often share the same root system.” – Dr. Joshbert Zands
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Zands Academic Network. All rights reserved.<br>
+    <a href="https://ko-fi.com/drjoshbertzands" target="_blank" class="kofi">☕ Support me on Ko-Fi</a>
+  </footer>
+</body>
+</html>
