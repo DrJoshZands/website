@@ -6,11 +6,11 @@
   <title>Dr. Joshbert Zands, PhD</title>
   <style>
     body {
+      margin: 0;
+      overflow: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f9;
       color: #222;
-      margin: 0;
-      padding: 0;
       line-height: 1.6;
     }
     header, nav, main, footer {
@@ -68,6 +68,7 @@
   </style>
 </head>
 <body>
+  <canvas id="sporeCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
   <header>
     <h1>Dr. Joshbert Zands, PhD</h1>
     <nav>
@@ -148,9 +149,68 @@
       “In the fungal hyphae of ideology, truth and delusion often share the same root system.” – Dr. Joshbert Zands
     </div>
   </main>
-  <footer>
+<footer>
     &copy; 2025 Zands Academic Network. All rights reserved.<br>
     <a href="https://ko-fi.com/drjoshbertzands" target="_blank" class="kofi">☕ Support me on Ko-Fi</a>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('sporeCanvas');
+      const ctx = canvas.getContext('2d');
+      const spores = [];
+      const maxDistance = 100;
+
+      function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      }
+
+      function createSpore(x, y) {
+          return { x, y, radius: 3 };
+      }
+
+      function drawSpore(spore) {
+          ctx.beginPath();
+          ctx.arc(spore.x, spore.y, spore.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(100, 100, 255, 0.7)';
+          ctx.fill();
+      }
+
+      function connectSpores(spore1, spore2) {
+          const dx = spore1.x - spore2.x;
+          const dy = spore1.y - spore2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+              ctx.beginPath();
+              ctx.moveTo(spore1.x, spore1.y);
+              ctx.lineTo(spore2.x, spore2.y);
+              ctx.strokeStyle = `rgba(100, 100, 255, ${1 - distance / maxDistance})`;
+              ctx.stroke();
+          }
+      }
+
+      function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          spores.forEach(spore => drawSpore(spore));
+          for (let i = 0; i < spores.length; i++) {
+              for (let j = i + 1; j < spores.length; j++) {
+                  connectSpores(spores[i], spores[j]);
+              }
+          }
+      }
+
+      canvas.addEventListener('click', (event) => {
+          const rect = canvas.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          spores.push(createSpore(x, y));
+          draw();
+      });
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+  });
+  </script>
 </body>
 </html>
