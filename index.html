@@ -4,68 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Joshbert Zands, PhD</title>
-  <style>
-    body {
-      margin: 0;
-      /* overflow: hidden; */ /* Commented out to enable scrolling */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f9;
-      color: #222;
-      line-height: 1.6;
-    }
-    header, nav, main, footer {
-      max-width: 800px;
-      margin: auto;
-      padding: 1em;
-    }
-    header h1 {
-      text-align: center;
-      margin-top: 0.5em;
-    }
-    nav {
-      text-align: center;
-      margin-bottom: 2em;
-    }
-    nav a {
-      margin: 0 1em;
-      text-decoration: none;
-      color: #444;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      margin-bottom: 3em;
-    }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3em;
-    }
-    .quote {
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #aaa;
-      padding-left: 1em;
-      margin: 2em 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
-      border-top: 1px solid #ddd;
-      padding-top: 1em;
-      margin-top: 2em;
-    }
-    a.kofi {
-      display: inline-block;
-      margin-top: 1em;
-      background: #29abe0;
-      color: white;
-      padding: 0.5em 1em;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <canvas id="sporeCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
@@ -83,7 +22,7 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>Dr. Joshbert Zands is the founding professor of Crypto-zoonotic-micro-mycology at UC Borehamwood. He discovered <em>Porphyromyces indignatus</em>, the ideological fungus now feared and misunderstood by many...</p>
+      <p>Dr. Joshbert Zands is the founding professor of Crypto-zoonotic-micro-mycology at UC Borehamwood. He discovered <em>Porphyromyces indignatus</em>, the ideological fungus now feared and misunderstood globally.</p>
     </section>
     <section id="projects">
       <h2>Current Projects</h2>
@@ -101,7 +40,7 @@
       <h2>Frequently Asked Questions</h2>
       <p><strong>What is a Myconid?</strong><br>A myconid is a humanoid fungal entity from speculative xenomycology. They walk, think, and occasionally teach undergraduate philosophy.</p>
       <p><strong>What is Mycology?</strong><br>The study of fungi — their biology, reproduction, and troubling influence on political behavior.</p>
-      <p><strong>UC Borehamwood? That place melting ice caps with flamethrowers?</strong><br>No official documentation supports this. The university’s Climatological Flamethrower Initiative continues to be a topic of debate...</p>
+      <p><strong>UC Borehamwood? That place melting ice caps with flamethrowers?</strong><br>No official documentation supports this. The university’s Climatological Flamethrower Initiative continues unabated.</p>
     </section>
     <section id="media">
       <h2>Press & Media</h2>
@@ -127,7 +66,7 @@
       <p><strong>Presenter:</strong> Do you think he might be watching this?</p>
       <p><strong>Dr. Zands:</strong> He watches Question Time religiously, which tells you everything you need to know. If he’s watching this, he’s probably yelling about council tax from his hot tub right now...</p>
     </section>
-    <section id="contact">
+   <section id="contact">
       <h2>Contact</h2>
       <p>Email: jzands@ucborehamwood.edu</p>
       <form action="https://formspree.io/f/mvgkwdbk" method="POST">
@@ -144,68 +83,10 @@
       “In the fungal hyphae of ideology, truth and delusion often share the same root system.” – Dr. Joshbert Zands
     </div>
   </main>
-<footer>
+  <footer>
     &copy; 2025 Zands Academic Network. All rights reserved.<br>
     <a href="https://ko-fi.com/drjoshbertzands" target="_blank" class="kofi">☕ Support me on Ko-Fi</a>
   </footer>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const canvas = document.getElementById('sporeCanvas');
-      const ctx = canvas.getContext('2d');
-      const spores = [];
-      const maxDistance = 100;
-
-      function resizeCanvas() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-      }
-
-      function createSpore(x, y) {
-          return { x, y, radius: 3 };
-      }
-
-      function drawSpore(spore) {
-          ctx.beginPath();
-          ctx.arc(spore.x, spore.y, spore.radius, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(255, 0, 0, 0.7)';  // Updated to a more contrasting color
-          ctx.fill();
-      }
-
-      function connectSpores(spore1, spore2) {
-          const dx = spore1.x - spore2.x;
-          const dy = spore1.y - spore2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < maxDistance) {
-              ctx.beginPath();
-              ctx.moveTo(spore1.x, spore1.y);
-              ctx.lineTo(spore2.x, spore2.y);
-              ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / maxDistance})`;  // Updated to a more contrasting color
-              ctx.stroke();
-          }
-      }
-
-      function draw() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          spores.forEach(spore => drawSpore(spore));
-          for (let i = 0; i < spores.length; i++) {
-              for (let j = i + 1; j < spores.length; j++) {
-                  connectSpores(spores[i], spores[j]);
-              }
-          }
-      }
-
-      canvas.addEventListener('click', (event) => {
-          const rect = canvas.getBoundingClientRect();
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
-          spores.push(createSpore(x, y));
-          draw();
-      });
-
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
-  });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
